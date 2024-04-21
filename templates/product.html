@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <title>Product Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        nav a {
+            height: 40px;
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+        }
+
+        #product-details {
+            margin-top: 80px;
+        }
+
+        .product-info {
+            font-size: 14px;
+            color: #555;
+        }
+
+        .popup {
+            display: none;
+            position: fixed;
+            padding: 10px;
+            width: 280px;
+            left: 50%;
+            margin-left: -150px;
+            height: 180px;
+            top: 50%;
+            margin-top: -100px;
+            background: #FFF;
+            border: 3px solid #F04A49;
+            z-index: 20;
+        }
+
+        #popup:after {
+            position: fixed;
+            content: "";
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: -2;
+        }
+
+        #popup:before {
+            position: absolute;
+            content: "";
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background: #FFF;
+            z-index: -1;
+        }
+
+        /* Styling buttons & webpage */
+
+        body {
+            background: offwhite;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        button {
+            margin-top: 50px;
+            background-color: rgba(255, 255, 255, 0.3);
+            border: 3px solid #F04A49;
+            color: #F04A49;
+            font-size: 25px;
+            padding: 10px 20px;
+
+        }
+
+        button:hover {
+            background-color: #F04A49;
+            color: #FFF;
+            border: 3px solid #F04A49;
+            transition: all 0.3s ease 0s;
+        }
+
+        p {
+            margin: 1em 0;
+            font-size: 16px;
+        }
+
+
+        .popupk {
+            display: none;
+            position: fixed;
+            padding: 10px;
+            width: 280px;
+            left: 50%;
+            margin-left: -150px;
+            height: 180px;
+            top: 50%;
+            margin-top: -100px;
+            background: #FFF;
+            border: 3px solid #F04A49;
+            z-index: 20;
+        }
+
+        #popupk:after {
+            position: fixed;
+            content: "";
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: -2;
+        }
+
+        #popupk:before {
+            position: absolute;
+            content: "";
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background: #FFF;
+            z-index: -1;
+        }
+
+        /* Styling buttons & webpage */
+
+
+
+        button {
+            margin-top: 50px;
+            background-color: rgba(255, 255, 255, 0.3);
+            border: 3px solid #F04A49;
+            color: #F04A49;
+            font-size: 25px;
+            padding: 10px 20px;
+
+        }
+
+        button:hover {
+            background-color: #F04A49;
+            color: #FFF;
+            border: 3px solid #F04A49;
+            transition: all 0.3s ease 0s;
+        }
+
+        p {
+            margin: 1em 0;
+            font-size: 16px;
+        }
+
+        #product-categories {
+            margin-top: 80px;
+            width: 200px;
+            position: fixed;
+            top: 80px;
+            left: 0;
+            bottom: 0;
+            border-right: 1px solid #ddd;
+            padding: 10px;
+        }
+
+        .loader {
+            border: 16px solid #f3f3f3;
+            border-top: 16px solid #3498db;
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            animation: spin 2s linear infinite;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            margin-top: -60px;
+            margin-left: -60px;
+            display: none;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+    <script>
+        document.getElementById("loader").style.display = "block";
+        function submitPricePredictionForm() {
+            // Submit the form
+            document.getElementById("pricePredictionForm").submit();
+        }
+        function submitAnalysisForm() {
+            // Submit the form
+            document.getElementById("AnalysisForm").submit();
+        }
+        setTimeout(function () {
+            document.getElementById("loader").style.display = "none";
+            // Redirect to another page (change the URL accordingly)
+            window.location.href = '/pricePrediction';
+        }, 5000); // 5000 milliseconds (5 seconds)
+    </script>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav
+        class="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600">
+        <div class="flex flex-wrap items-center justify-between mx-auto p-4">
+            <a href="http://127.0.0.1:5000/welcome" class="flex items-center space-x-3 rtl:space-x-reverse">
+
+                <img src="{{ url_for('static', filename='home.png') }}" class="h-8" alt="Universities Map">
+                <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
+            </a>
+
+            <div class="flex space-x-3">
+                <button
+                    class="inline-block px-6 py-2 font-medium text-white bg-blue-700 rounded-md shadow-md hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                    Login
+                </button>
+                <button
+                    class="inline-block px-6 py-2 font-medium text-white bg-green-400 rounded-md shadow-md hover:bg-green-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-300">
+                    Signup
+                </button>
+            </div>
+        </div>
+    </nav>
+    <!-- Search Results -->
+    <div id="product-categories">
+        <h1 style="font-size: 20px; margin-bottom: 10px;" class="font-bold">Product Categories</h1>
+
+        <ul style="padding: 0;">
+            <a href="{{ url_for('category_result', category='Women Clothing') }}">
+                <li style="padding: 5px 0;">Women's Clothing</li>
+            </a>
+            <a href="{{ url_for('category_result', category='Mens Accessories') }}">
+                <li style="padding: 5px 0;">Men's Accessories</li>
+            </a>
+            <a href="{{ url_for('category_result', category='Electronics') }}">
+                <li style="padding: 5px 0;">Electronics</li>
+            </a>
+            <a href="{{ url_for('category_result', category='Musical Instruments') }}">
+                <li style="padding: 5px 0;">Musical Instruments</li>
+            </a>
+            <a href="{{ url_for('category_result', category='Antiques') }}">
+                <li style="padding: 5px 0;">Antiques</li>
+            </a>
+            <a href="{{ url_for('category_result', category='Miscellaneous') }}">
+                <li style="padding: 5px 0;">Miscellaneous</li>
+            </a>
+        </ul>
+    </div>
+    <hr>
+    <div id="product-details">
+        <h2>{{ product_info['Title'] }} Details</h2>
+
+        <div class="product-details">
+            <p><strong>Seller Name:</strong> {{ product_info['Seller Name'] }}</p>
+            <p><strong>Product Title:</strong> {{ product_info['Title'] }}</p>
+            <p><strong>Location:</strong> Houston, Texas, United States</p>
+            <p><strong>Product Condition:</strong> {{ product_info['Product Condition'] }}</p>
+            <p><strong>Product Category:</strong> {{ product_info['Category'] }}</p>
+        </div>
+
+        <form id="AnalysisForm" action="/analysis" method="GET" style="display: none;">
+            <input type="hidden" name="Category" value="{{ product_info['Category'] }}">
+            <input type="submit" value="Submit">
+        </form>
+        <button class="button" onclick="submitAnalysisForm()">Go to Analysis</button>
+        <form id="pricePredictionForm" action="/pricePrediction" method="GET" style="display: none;">
+            <input type="hidden" name="Title" value="{{ product_info['Title'] }}">
+            <input type="hidden" name="SellerName" value="{{ product_info['Seller Name'] }}">
+            <input type="hidden" name="Location" value="{{ product_info['Location'] }}">
+            <input type="hidden" name="ProductCondition" value="{{ product_info['Product Condition'] }}">
+            <input type="hidden" name="ProductCondition" value="{{ product_info['Price'] }}">
+            <input type="text" name="additionalInput" placeholder="Additional Input">
+
+            <input type="submit" value="Submit">
+        </form>
+
+        <button class="button" onclick="submitPricePredictionForm()">Price Predictor</button>
+    </div>
+    <footer
+        class="fixed bottom-0 left-0 z-20 w-full p-4 bg-blue-500 text-white border-t border-gray-200 shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800 dark:border-gray-600">
+        <span class="text-sm sm:text-center dark:text-gray-400">
+            &copy; 2023 <a href="http://127.0.0.1:5000/welcome" class="hover:underline">Your Website</a>. All Rights
+            Reserved.
+        </span>
+        <ul class="flex flex-wrap items-center mt-3 text-sm font-medium sm:mt-0">
+            <li>
+                <a href="#" class="hover:underline me-4 md:me-6">About</a>
+            </li>
+            <li>
+                <a href="#" class="hover:underline me-4 md:me-6">Privacy Policy</a>
+            </li>
+            <li>
+                <a href="#" class="hover:underline me-4 md:me-6">Licensing</a>
+            </li>
+            <li>
+                <a href="#" class="hover:underline">Contact</a>
+            </li>
+        </ul>
+    </footer>
+
+
+</body>
+
+</html>

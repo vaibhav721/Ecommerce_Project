@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Analysis</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        nav {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+        }
+
+        #analysis-details {
+            margin-top: 20px;
+        }
+
+        .analysis-info {
+            font-size: 14px;
+            color: #555;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+    </nav>
+
+    <div id="analysis-results">
+        {% if category == 'Women Clothing' %}
+        <img src="{{ url_for('static', filename='United States_Women.png') }}" alt="Women Clothing Analysis">
+        {% elif category == 'Electronics' %}
+        <img src="{{ url_for('static', filename='United States_Electronics.png') }}" alt="Electronics Analysis">
+        {% elif category == 'Musical Instruments' %}
+        <img src="{{ url_for('static', filename='United States_Musical Instrument.png') }}"
+            alt="Musical Instruments Analysis">
+        {% else %}
+        <p>No analysis available for the selected category</p>
+        {% endif %}
+
+    </div>
+
+    <footer>
+    </footer>
+
+</body>
+
+</html>
