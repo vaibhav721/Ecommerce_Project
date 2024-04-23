@@ -53,7 +53,7 @@
     </li>
 </ol>
 <h2>Application Visuals</h2>
-<img src="outputs\Price Predictor" width="600">
+<img src="outputs\image.png" width="600">
 <p><i>Machine learning model predictions displayed through interactive charts and graphs.</i></p>
 <img src="outputs\image-1.png" alt="Price Predictor" width="600">
 <img src="outputs\image-9.png" alt="Price Predictor" width="600">
