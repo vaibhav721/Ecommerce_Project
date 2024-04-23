@@ -53,18 +53,19 @@
     </li>
 </ol>
 <h2>Application Visuals</h2>
-<img src="path_to_your_image.png" alt="Application Overview" width="600">
-<p><i>Interactive web interface showcasing predictive analytics and spatial data insights.</i></p>
-<img src="path_to_your_additional_image.png" alt="Price Predictor" width="600">
+<img src="E:\Projects\Graduate\Ecommerce_Project\outputs\Price Predictor" width="600">
 <p><i>Machine learning model predictions displayed through interactive charts and graphs.</i></p>
+<img src="E:\Projects\Graduate\Ecommerce_Project\outputs\image-1.png" alt="Price Predictor" width="600">
+<img src="E:\Projects\Graduate\Ecommerce_Project\outputs\image-9.png" alt="Price Predictor" width="600">
+
 <h2>Big Data Insights:</h2>
-<img src="path_to_your_bigdata_image1.png" alt="Big Data Insight 1" width="600">
-<img src="path_to_your_bigdata_image2.png" alt="Big Data Insight 2" width="600">
-<img src="path_to_your_bigdata_image3.png" alt="Big Data Insight 3" width="600">
-<img src="path_to_your_bigdata_image4.png" alt="Big Data Insight 4" width="600">
+<img src="E:\Projects\Graduate\Ecommerce_Project\outputs\image-3.png" alt="Big Data Insight 1" width="600">
+<img src="E:\Projects\Graduate\Ecommerce_Project\outputs\image-4.png" alt="Big Data Insight 2" width="600">
+<img src="E:\Projects\Graduate\Ecommerce_Project\outputs\image-5.png" alt="Big Data Insight 3" width="600">
+<img src="E:\Projects\Graduate\Ecommerce_Project\outputs\image-6.png" alt="Big Data Insight 3" width="600">
 <h2>Insights based on location:</h2>
-<img src="path_to_your_location_image1.png" alt="Location Insight 1" width="600">
-<img src="path_to_your_location_image2.png" alt="Location Insight 2" width="600">
+<img src="E:\Projects\Graduate\Ecommerce_Project\outputs\image-7.png" alt="Location Insight 1" width="600">
+<img src="E:\Projects\Graduate\Ecommerce_Project\outputs\image-8.png" alt="Location Insight 2" width="600">
 <h2>Contributors</h2>
 <ul>
     <li>Vaibhav Gupta</li>
